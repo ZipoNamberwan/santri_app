@@ -35,16 +35,32 @@ RUN echo "error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT" > /usr/local/etc/
 COPY . /var/www/html
 
 # Create necessary directories
-RUN mkdir -p /var/www/html/application/cache && \
+RUN mkdir -p /var/www/html/application/cache/sessions && \
     mkdir -p /var/www/html/application/logs && \
+    mkdir -p /var/www/html/assets/file_tmp/tiket && \
+    mkdir -p /var/www/html/assets/file_tmp/rekap && \
+    chown -R www-data:www-data /var/www/html/application/cache && \
+    chown -R www-data:www-data /var/www/html/application/logs && \
+    chown -R www-data:www-data /var/www/html/assets/file_tmp && \
     chmod -R 755 /var/www/html/application/cache && \
-    chmod -R 755 /var/www/html/application/logs
+    chmod -R 755 /var/www/html/application/logs && \
+    chmod -R 755 /var/www/html/assets/file_tmp && \
+    chmod -R u+w /var/www/html/application/cache && \
+    chmod -R u+w /var/www/html/application/logs && \
+    chmod -R u+w /var/www/html/assets/file_tmp
+
+# Copy entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
 # Expose port for PHP-FPM
 EXPOSE 9000
+
+# Set entrypoint
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 # Start PHP-FPM
 CMD ["php-fpm"]

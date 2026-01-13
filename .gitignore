@@ -31,3 +31,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/tests/
 /tests/results/
 
+assets/file_tmp/tiket
+assets/file_tmp/rekap

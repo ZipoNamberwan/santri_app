@@ -4,7 +4,7 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: santri-app-php-fpm
-    container_name: santri-app-php-fpm
+    container_name: santri-app
     restart: unless-stopped
     expose:
       - 9000
@@ -12,6 +12,7 @@ services:
       - ./:/var/www/html
       - ./application/logs:/var/www/html/application/logs
       - ./application/cache:/var/www/html/application/cache
+      - ./assets/file_tmp:/var/www/html/assets/file_tmp
     networks:
       - santri_network
     depends_on:
@@ -60,3 +61,4 @@ volumes:
 networks:
   santri_network:
     driver: bridge
+  
