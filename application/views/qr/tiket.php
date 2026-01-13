@@ -88,7 +88,7 @@ if (is_null($nmtujuan)) { $nmtujuan = 'Tidak Diketahui'; } else { $nmtujuan = $n
                     <div class="form-group row">
                       <div class="col-sm-12 text-center">
                         Scan kode QR berikut ketika sampai di BPS Provinsi Jawa Timur <br>
-                        <img src="https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl=<?php echo $det['qr_code'] ?>">';
+                        <img src="https://quickchart.io/qr?size=400x400&text=<?php echo base_url(); ?>qr/new/<?php echo $det['qr_code'] ?>">';
                       </div>
                     </div>
                     <div class="form-group row">

@@ -101,7 +101,7 @@ class Reservation extends CI_Controller {
           <tr><td style="text-align: right;">Tujuan : </td><td>'.$nmtujuan.' '.$layanan.'</td></tr>
           <tr><td style="text-align: right;">Keperluan : </td><td>'.$keperluan.'</td></tr>
           <tr style="text-align: center;"><td colspan="5">--------------------------------------------------------------------------------</td></tr>
-          <tr style="text-align: center;"><td colspan="5">Scan kode QR berikut ketika sampai di BPS Provinsi Jawa Timur <br><img src="https://chart.googleapis.com/chart?cht=qr&chs=300x300&chl='.$qr_code.'"></td></tr>
+          <tr style="text-align: center;"><td colspan="5">Scan kode QR berikut ketika sampai di BPS Provinsi Jawa Timur <br><img src="https://quickchart.io/qr?size=400x400&text=' . base_url() . 'qr/new/' . $qr_code . '"></td></tr>
         </table>';
 
         $this->load->library('email');
@@ -110,7 +110,7 @@ class Reservation extends CI_Controller {
         //$config['smtp_host'] = 'ssl://mail.bps.go.id';
          $config['smtp_host'] = 'ssl://smtp.bps.go.id';
         $config['smtp_user'] = $from_email;
-        $config['smtp_pass'] = 'Jatimbangkit@3500';
+        $config['smtp_pass'] = 'Jatimbangkit@3500X';
         $config['smtp_port'] = '465';
         $config['charset'] = "utf-8";
         $config['mailtype'] = "html";
