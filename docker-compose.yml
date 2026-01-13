@@ -1,0 +1,62 @@
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: santri-app-php-fpm
+    container_name: santri-app-php-fpm
+    restart: unless-stopped
+    expose:
+      - 9000
+    volumes:
+      - ./:/var/www/html
+      - ./application/logs:/var/www/html/application/logs
+      - ./application/cache:/var/www/html/application/cache
+    networks:
+      - santri_network
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_MAIN_DATABASE: ${DB_MAIN_DATABASE}
+      DB_MAIN_USERNAME: ${DB_MAIN_USERNAME}
+      DB_MAIN_PASSWORD: ${DB_MAIN_PASSWORD}
+
+  nginx:
+    image: nginx:alpine
+    container_name: santri-app-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www/html
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - santri_network
+    depends_on:
+      - app
+
+  db:
+    image: mysql:8.0
+    container_name: santri-app-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_MAIN_DATABASE}
+      MYSQL_USER: ${DB_MAIN_USERNAME}
+      MYSQL_PASSWORD: ${DB_MAIN_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_MAIN_PASSWORD}
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - santri_network
+    ports:
+      - "3306:3306"
+
+volumes:
+  dbdata:
+    driver: local
+
+networks:
+  santri_network:
+    driver: bridge

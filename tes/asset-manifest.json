@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/santri_app/tes/static/css/main.4cb23f27.css",
+    "main.js": "/santri_app/tes/static/js/main.6e767f02.js",
+    "static/media/modalBackground_2.jpg": "/santri_app/tes/static/media/modalBackground_2.20bc4ec19a8b580b59c3.jpg",
+    "static/media/avatar.png": "/santri_app/tes/static/media/avatar.5fedd64859d19a7179b8.png",
+    "index.html": "/santri_app/tes/index.html",
+    "main.4cb23f27.css.map": "/santri_app/tes/static/css/main.4cb23f27.css.map",
+    "main.6e767f02.js.map": "/santri_app/tes/static/js/main.6e767f02.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4cb23f27.css",
+    "static/js/main.6e767f02.js"
+  ]
+}

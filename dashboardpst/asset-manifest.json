@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/santri_app/dashboard/static/css/main.213a5e7d.css",
+    "main.js": "/santri_app/dashboard/static/js/main.de622d47.js",
+    "static/js/787.35f9c669.chunk.js": "/santri_app/dashboard/static/js/787.35f9c669.chunk.js",
+    "static/media/revicons.eot": "/santri_app/dashboard/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/santri_app/dashboard/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/santri_app/dashboard/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/santri_app/dashboard/index.html",
+    "main.213a5e7d.css.map": "/santri_app/dashboard/static/css/main.213a5e7d.css.map",
+    "main.de622d47.js.map": "/santri_app/dashboard/static/js/main.de622d47.js.map",
+    "787.35f9c669.chunk.js.map": "/santri_app/dashboard/static/js/787.35f9c669.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.213a5e7d.css",
+    "static/js/main.de622d47.js"
+  ]
+}
