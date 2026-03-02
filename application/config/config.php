@@ -24,7 +24,8 @@ date_default_timezone_set('Asia/Jakarta');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://10.35.0.98/';
+// $config['base_url'] = 'http://10.35.0.95:8080/';
+$config['base_url'] = 'https://santri.cathajatim.id/';
 // $config['base_url'] = 'https://webapps.bps.go.id/jatim/santri_app/';
 
 /*
